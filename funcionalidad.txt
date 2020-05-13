@@ -1,4 +1,4 @@
-# Tablero:
+﻿# Tablero:
 
       1   2   3         
      =============  
@@ -17,6 +17,7 @@
     5) - Realizar Jugada - pc (fila y columna al azar, exceptuando el lugar ocupado)
     6) - Despúes de cada jugada, comprabar si existe un 3 en raya
 
-# Lógica:
+
+ esTE Es un nuevo cambio
 
     
