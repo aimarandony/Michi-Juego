@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,ul{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: #FFDE7D;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2%;
+
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 12% auto;
+    grid-template-areas: "header header" "aside main";
+}
+#cortina{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.363);
+    z-index: 1;
+}
+header{
+    background: #F6416C;
+    grid-area: header;
+
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.247) 0px 10px 6px;
+}
+
+aside{
+    background: #00B8A9;
+    grid-area: aside;
+
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.247) 10px 10px 6px;
+}
+
+main{
+    background: #F8F3D4;
+    grid-area: main;
+
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.247) 10px 10px 6px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+header h1{
+    text-transform: uppercase;
+    color: #FFDE7D;
+    font-size: 2rem;
+}
+header button{
+    height: 55%;
+    background: #F8F3D4;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding: 0 30px;
+    box-shadow: rgba(0, 0, 0, 0.247) 8px 8px 6px;
+
+    color: #F6416C;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: all .3s ease-out;
+}
+header button:hover{
+    outline: none;
+    cursor: pointer;
+}
+header button:active{
+    transform: translate(4px,4px);
+}
+
+aside{
+    overflow: auto;
+    padding: 20px;
+}
+aside .title h2{
+    position: relative;
+    text-transform: uppercase;
+    color: #FFDE7D;
+    font-size: 1.3rem;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+aside .title h2::after{
+    content: '';
+    width: 60px;
+    height: 2px;
+    background: #F8F3D4;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;    
+}
+aside .players li{
+    list-style: none;
+}
+aside .players li p{
+    padding: 15px;
+    font-weight: 700;
+    color: #FFDE7D;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    transition: all .3s ease;
+}
+aside .players li p:hover{
+    background: #F8F3D4;
+    color: #00B8A9;
+}
+aside .players li p:hover span{
+    color: #00B8A9;
+}
+aside .players li p span{
+    color: #F8F3D4;
+}
+main .head{
+    height: 15%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .head .player-one{
+    color: #00B8A9;
+    font-weight: bold;
+}
+main .head .versus-icon{
+    font-family: 'Permanent Marker', cursive;
+    color: #FFDE7D;
+    font-weight: bolder;
+    font-size: 1.4rem;
+    text-shadow: rgba(0, 0, 0, 0.315) 5px 5px 6px;
+}
+main .head .player-two{
+    color: #F6416C;
+    font-weight: bold;
+}
+
+main .content{
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .content .tablero{
+    width: 390px;
+    height: 390px;
+    display: grid;
+    grid-template-columns: 130px 130px 130px;
+    grid-template-rows:  130px 130px 130px;
+    grid-template-areas: "auno ados atres" "buno bdos btres" "cuno cdos ctres";
+    justify-content: center;
+}
+main .content .tablero div{
+    background: none;
+    border: 8px solid #404040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .content .tablero div:hover{
+    cursor: pointer;
+    background: #FFDE7D;
+}
+main .content .tablero div i{
+    font-size: 4rem;
+}
+main .content .tablero div .fa-circle{
+    color: #00B8A9;
+}
+main .content .tablero div .fa-times{
+    color: #F6416C;
+}
+main .content .tablero #a1{
+    grid-area: auno;
+    border-top: none;
+    border-left: none;
+}
+main .content .tablero #a2{
+    grid-area: ados;
+    border-top: none;
+}
+main .content .tablero #a3{
+    grid-area: atres;
+    border-top: none;
+    border-right: none;
+}
+main .content .tablero #b1{
+    grid-area: buno;
+    border-left: none;
+}
+main .content .tablero #b2{
+    grid-area: bdos;
+}
+main .content .tablero #b3{
+    grid-area: btres;
+    border-right: none;
+}
+main .content .tablero #c1{
+    grid-area: cuno;
+    border-bottom: none;
+    border-left: none;
+}
+main .content .tablero #c2{
+    grid-area: cdos;
+    border-bottom: none;
+}
+main .content .tablero #c3{
+    grid-area: ctres;
+    border-bottom: none;
+    border-right: none;
+}
+
+#modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #F8F3D4;
+    width: 400px;
+    padding: 25px;
+    border-radius: 20px;
+    z-index: 2;
+}
+#modal .modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#modal .modal-header #btnCloseModal i{
+    cursor: pointer;
+    color: #404040;
+}
+#modal .modal-body #step-01{
+    display: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#modal .modal-body button{
+    background: #FFDE7D;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 20px 50px;
+    margin: 10px 2px;
+    box-shadow: rgba(0, 0, 0, 0.26) 6px 6px 6px;
+
+    color: #404040;
+    font-weight: bold;
+    transition: all .2s ease-out;
+}
+#modal .modal-body button:hover{
+    cursor: pointer;
+}
+#modal .modal-body button:active{
+    transform: scale(0.8);
+}
+#modal .modal-body .step-02 input{
+    border: 2px solid #FFDE7D;
+    border-radius: 20px;
+    padding: 8px 15px;
+    background: none;
+    color: #404040;
+    width: 100%;
+}
+#modal .modal-body .step-02 button{
+    background: #F6416C;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin: 20px 0 0 0;
+    color: #F8F3D4;
+    width: 100%;
+}
+#modal .modal-body .step-02 #return{
+    padding: 10px;
+    font-size: 0.9rem;
+    background: #404040;
+}
+/* GLOBALES */
+.sub-title{
+    position: relative;
+    text-transform: uppercase;
+    color: #F6416C;
+    font-size: 1.3rem;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+.sub-title::after{
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: #F6416C;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;  
+}
+.circle{
+    color: #00B8A9;
+}
+.circle::after{
+    background: #00B8A9;
+}
+.times{
+    color: #F6416C;
+}
